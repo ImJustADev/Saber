@@ -1,0 +1,17 @@
+{
+    "name": "saberbot",
+    "version": "1.0.0",
+    "description": "A Custom Discord Bot for All your Needs",
+    "main": "app.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/imjustadev/Saber.git"
+    },
+    "author": "ImJustADev",
+    "license": "UNLICENSED",
+    "homepage": "https://github.com/imjustADev/Saber#readme",
+    "dependencies": {
+        "discord.js": "^12.5.1",
+        "dotenv": "^8.2.0"
+    }
+}

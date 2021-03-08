@@ -1,4 +1,4 @@
-# SaberBot Reco
+# SaberBot
 **A Discord Bot for Smash Ultimate Data Collection and Profile Management**
 
 Trecco is a Public Bot that is currently planned to release in its ALPHA stage within the next couple months.
@@ -20,3 +20,4 @@ Create and keep track of friends lists, Nintendo friend codes, all through your 
   * Create, Manage, and Stop custom Arenas through the bot via a user-friendly UI
   * View other user statistics from any server
   * More in the future...
+  * I added this line to test

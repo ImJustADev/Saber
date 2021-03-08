@@ -1,0 +1,55 @@
+[
+    [
+      {
+        "name": "switchCode",
+        "help": "Keeps your Nintendo Switch Friend Code stored for reference and sharing.\n\n*Usage Examples*\n`r!switchCode SW-YOUR-CODE-HERE` Sets your Nintendo Switch code (include dashes).\n`r!switchCode clear` Your Nintendo Switch code will be removed from the database.\n`r!switchCode` Gets sender's Nintendo Switch code.\n`r!switchCode @USER` Gets mentioned users' Nintendo Switch code.\n\n*Shortcut*\n`r!sc`"
+      },
+      {
+        "name": "ssbu",
+        "help": "Sends a message with your Super Smash Bros. Ultimate Battle Arena details.\n\n*Usage Example*\n`r!ssbu [ID] [Password]` Sends your Arena ID and Arena Password. Password is optional. Typing `friend` for ID will indicate that the lobby is only open to friends."
+      }
+
+    ],
+    [
+      {
+        "name": "coin",
+        "help": "Flips a coin. Can land on heads, tails, or its side.\n\n*Shortcut*\n`r!c`"
+      }
+    ],
+    [
+      {
+        "name": "build",
+        "help": "Returns the current build or version."
+      },
+      {
+        "name": "serverinfo",
+        "help": "Sends information about the server the message was sent in."
+      }
+    ],
+    [
+      {
+        "name": "settings",
+        "help": "Lists your current settings\n\n*Usage Examples*\n`r!settings switchCode PUBLIC` Sets the sender's privacy settings for their Nintendo Switch friend code.\n\n*Format*\n`r!settings [platform]Code [PRIVACY]`\n\n*Arguments*\n**platform** - `3DS`, `Switch`, `PoGo`\n**privacy** - `PUBLIC`, `PRIVATE`"
+      },
+      {
+        "name": "clear",
+        "help": "Deletes all of your records stored. Use with caution."
+      },
+      {
+        "name": "invite",
+        "help": "Sends a link to invite Trecco to another server."
+      },
+      {
+        "name": "github",
+        "help": "View the original project source code."
+      },
+      {
+        "name": "changelog",
+        "help": "Changes made concerning recent builds can be found here."
+      },
+      {
+        "name": "help",
+        "help": "Use this command for detailed information on each command.\n\n*Usage Examples*\n`g!help coin` Returns help documentation for `g!help coin`."
+      }
+    ]
+  ]

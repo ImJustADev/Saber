@@ -1,0 +1,698 @@
+[
+  [
+    {
+      "DISPLAY_NAME": "Mario",
+      "ID": 1,
+      "IS_DLC": "false",
+      "ROLE_ID": "813569860960649256"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Donkey Kong",
+      "ID": 2,
+      "IS_DLC": "false",
+      "ROLE_ID": "813570006176235530"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Link",
+      "ID": 3,
+      "IS_DLC": "false",
+      "ROLE_ID": "813570597355257876"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Samus",
+      "ID": 4,
+      "IS_DLC": "false",
+      "ROLE_ID": "813570815005163540"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Dark Samus",
+      "ID": 5,
+      "IS_DLC": "false",
+      "ROLE_ID": "813570835347406848"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Yoshi",
+      "ID": 6,
+      "IS_DLC": "false",
+      "ROLE_ID": "813570900083474483"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Kirby",
+      "ID": 7,
+      "IS_DLC": "false",
+      "ROLE_ID": "813570925924057118"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Fox",
+      "ID": 8,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571003510423594"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Pikachu",
+      "ID": 9,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571027917209621"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Lugii",
+      "ID": 10,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571052830588979"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ness",
+      "ID": 11,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571077535694865"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Cpt Falcon",
+      "ID": 12,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571099094286356"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Jigglypuff",
+      "ID": 13,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571135022432326"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Peach",
+      "ID": 14,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571171852222504"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Daisy",
+      "ID": 15,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571198964989992"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Bowser",
+      "ID": 16,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571233253818389"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ice Climbers",
+      "ID": 17,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571264291536918"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Sheik",
+      "ID": 18,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571295807012874"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Zelda",
+      "ID": 19,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571313360306218"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Dr Mario",
+      "ID": 20,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571333304090624"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Pichu",
+      "ID": 21,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571355109752882"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Falco",
+      "ID": 22,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571381336735765"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Marth",
+      "ID": 23,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571406675443772"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Lucina",
+      "ID": 24,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571426057322496"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Young Link",
+      "ID": 25,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571456105578566"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Chrom",
+      "ID": 26,
+      "IS_DLC": "false",
+      "ROLE_ID": "815329102407270410"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Game & Watch",
+      "ID": 27,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571727631843329"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Meta Knight",
+      "ID": 28,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571778390523905"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ganondorf",
+      "ID": 29,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571489928052737"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Mewtwo",
+      "ID": 30,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571539005341727"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Roy",
+      "ID": 31,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571566355873822"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Pit",
+      "ID": 32,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571805985898516"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Dark Pit",
+      "ID": 33,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571824985178113"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Zero Suit Samus",
+      "ID": 34,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571853502382081"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Wario",
+      "ID": 35,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571886306033745"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Snake",
+      "ID": 36,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571905365344267"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ike",
+      "ID": 37,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571923912294450"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Squirtle",
+      "ID": 38,
+      "IS_DLC": "false",
+      "ROLE_ID": "813571943701020692"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ivysaur",
+      "ID": 39,
+      "IS_DLC": "false",
+      "ROLE_ID": "815327782422708225"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Charizard",
+      "ID": 40,
+      "IS_DLC": "false",
+      "ROLE_ID": "815327814404276254"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Diddy Kong",
+      "ID": 41,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572134341312564"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Lucas",
+      "ID": 42,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572171489476629"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Sonic",
+      "ID": 43,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572191237046302"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "King Dedede",
+      "ID": 44,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572220919611404"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Olimar",
+      "ID": 45,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572261638176788"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Lucario",
+      "ID": 46,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572280834719774"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "R.O.B",
+      "ID": 47,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572307867664386"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Toon Link",
+      "ID": 48,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572343002562560"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Wolf",
+      "ID": 49,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572472527257660"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Villager",
+      "ID": 50,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572492483362846"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Mega Man",
+      "ID": 51,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572512301711429"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Wii Fit Trainer",
+      "ID": 52,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572542831788042"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Rosalina & Luma",
+      "ID": 53,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572571442184253"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Little Mac",
+      "ID": 54,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572601468157952"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Greninja",
+      "ID": 55,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572624712990770"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Mii Brawler",
+      "ID": 56,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572661674246194"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Mii Swordfighter",
+      "ID": 57,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572732897591326"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Mii Gunner",
+      "ID": 58,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572758687711272"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Palutena",
+      "ID": 59,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572780342902814"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Pac-Man",
+      "ID": 60,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572804221992970"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Robin",
+      "ID": 61,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572823234117653"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Shulk",
+      "ID": 62,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572844562808892"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Bowser Jr.",
+      "ID": 63,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572888166662164"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Duck Hunt",
+      "ID": 64,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572952825659432"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ryu",
+      "ID": 65,
+      "IS_DLC": "false",
+      "ROLE_ID": "813572980713848832"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ken",
+      "ID": 66,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573006718140476"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Cloud",
+      "ID": 67,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573036929974323"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Corrin",
+      "ID": 68,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573058832105532"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Bayonetta",
+      "ID": 69,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573082584186880"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Inkling",
+      "ID": 70,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573105754177567"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Ridley",
+      "ID": 71,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573126787956786"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Simon",
+      "ID": 72,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573149828055062"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Richter",
+      "ID": 73,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573172888731661"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "King K. Rool",
+      "ID": 74,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573215665258506"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Isabelle",
+      "ID": 75,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573239288627241"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Incineroar",
+      "ID": 76,
+      "IS_DLC": "false",
+      "ROLE_ID": "813573274763919360"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Piranha Plant",
+      "ID": 77,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573300814610453"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Joker",
+      "ID": 78,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573368980045895"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Hero",
+      "ID": 79,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573402525696052"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Banjo & Kazooie",
+      "ID": 80,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573422251900930"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Terry",
+      "ID": 81,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573462659825665"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Byleth",
+      "ID": 82,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573482125459456"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Min Min",
+      "ID": 83,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573507999989760"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Steve/Alex",
+      "ID": 84,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573532448456724"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Sephiroth",
+      "ID": 85,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573623293542421"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Pyra",
+      "ID": 86,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573652087963659"
+    }
+  ],
+  [
+    {
+      "DISPLAY_NAME": "Mythra",
+      "ID": 87,
+      "IS_DLC": "true",
+      "ROLE_ID": "813573652087963659"
+    }
+  ]
+]
