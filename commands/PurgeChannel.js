@@ -2,7 +2,6 @@ var config = require('../config.json');
 const Command = require('../api/Command.js');
 
 const fs = require('fs');
-const { GuildAuditLogs, Guild } = require('discord.js');
 const encoder = 'utf8';
 
 //Category: Embed Colors
@@ -13,44 +12,11 @@ const g_color = 15823988; //green (success)
 //Category: Ranges
 const min = config.CMD_PURGE_MINIMUM; // min
 const max = config.CMD_PURGE_MAXIMUM; // max
+const report = config.PURGE_LOG_CHANNEL;
+var npm = require('../package.json');
 
-//Category: Roles
-var guild_id = config.GUILD_ID; // Guild ID
-var head_gecko = config.SELF; // Myself (Blaze#0069)
-var head_gecko_id = config.SELF_ID; // Myself (Blaze) (ID)
-
-var gecko = config.GECKO_ROLE_ID; // Gecko
-var admin = config.ADMIN_ROLE_ID; // Admin
-var mod = config.MOD_ROLE_ID; // Mod
-var friend = config.FRIEND_ROLE_ID; // Friend
-
-//Category: Development
-var docs = config.DOCUMENTATION_CHANNEL_ID; // #documentation
-var templates = config.TEMPLATES_CHANNEL_ID; // #templates
-var response = config.RESPONSE_CHANNEL_ID; // #response
-var format = config.FORMAT_CHANNEL_ID; // #format
-
-//Category: Important
-var welcome = config.WELCOME_CHANNEL_ID; // #welcome
-var announcements = config.ANNOUNCEMENT_CHANNEL_ID; // #announcements
-var changelog = config.CHANGELOG_CHANNEL_ID; // #changelog
-var boosts = config.BOOSTS_CHANNEL_ID; // #boosts
-var roles = config.ROLE_CHANNEL_ID; // #roles
-
-//Category: Text Channels
-var general = config.GENERAL_CHANNEL_ID; // #general
-var bot_cmds = config.BOT_CMDS_CHANNEL_ID; // #bot-cmds
-
-//Category: Voice Channels
-var vc_1 = config.VC1_ID; // #vc-1
-var vc_2 = config.VC2_ID; // #vc-2
-var vc_afk = config.VCAFK_ID; // #vc-afk
-
-//Category Arenas (Defaults Only)
-var arena_1 = config.A1_ID; // #arena-1
-var arena_2 = config.A2_ID; // #arena-2
-var arena_3 = config.A3_ID; // #arena-3
-var arena_4 = config.A4_ID; // #arena-4
+const npm_ver = npm.version;
+const npm_name = npm.name;
 
 var ignore = new Map([
 
@@ -73,21 +39,21 @@ var k = 1; // 1
 var l = 0; // 0
 var m = 0; // 0
 var lines = min;
+var client;
 
 const other_words = ["Robery", "Kidnap", "Hug", "Fruitcake", "Murder", "Octapus", "Hitman", "Stab", "Love", "Motivation", "AK-47", "Knife"];
 
 class PurgeChannel extends Command {
     constructor(msg, client) {
         super(msg);
-
+        
+        const reportTo = client.channels.cache.find(i => i.name === report);
         var executor = msg.member.user.tag;
         var e_id = msg.author.id; 
-        if ((msg.member.roles.cache.has(admin))) {
-            if (msg.author.id === head_gecko_id) {
-
+        if ((msg.member.hasPermission("ADMINISTRATOR"))) {
                 try {
 
-                    var input = msg.content.split(" ")[1]; //input
+                    var input = msg.content.split(" ")[1];
 
                     if ((parseInt(input) >= min) && (parseInt(input) <= max)) {
 
@@ -109,9 +75,10 @@ class PurgeChannel extends Command {
                                 msg.channel.bulkDelete(input)
                                 .catch(console.error);
 
+
                                   for (i = 0; i < obj.length; i++) {
                                     for (j = 0; j < obj[i].length; j++) {
-                                        msg.channel.send({
+                                        reportTo.send({
                                             embed: {
                                                 author: {
                                                     name: obj[i][j].name,
@@ -121,15 +88,10 @@ class PurgeChannel extends Command {
                                                 color: g_color,
                                                 description: "\nMessages Affected: `" + input + "`\nExecuted By: `" + executor + "`\nUser ID: `" + e_id + "`\nChannel(s) Affected: `#" + msg.channel.name + "`\nTime: `" + msg.createdAt + "`\n\n",
                                                 footer: {
-                                                    "text": "\nTreccoTheGecko v1.0"
+                                                    "text": npm_name + " " + npm_ver
                                                 }
                                             }
-                                        }).then(msg => {
-                                            msg.delete( {
-                                                timeout: 5000
-                                            })
                                         })
-                                        .catch(console.error);
                 
                                     }
                                 }
@@ -163,21 +125,6 @@ class PurgeChannel extends Command {
                 } catch (e) {
                     console.log(e);
                 }
-
-            }
-            else {
-                msg.channel.send({
-                    embed: {
-                        author: {
-                            name: "[ERR172] TreccoBot has detected an issue!",
-                        },
-                        title: "Reason ➔ Unauthorized User",
-                        color: e_color,
-                        description: "\n\nYou cannot execute this command!\nStaff have been notified of this event.\nIf this is bug, please contact an admin immediately.",
-                    }
-                });
-            }
-
         }
 
         //Invalid Permissions

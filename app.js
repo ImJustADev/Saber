@@ -34,9 +34,6 @@ const c3 = Color.colorCodes.BLUE;
 const c4 = Color.colorCodes.YELLOW;
 const c5 = Color.colorCodes.RED;
 
-const memberRole = config.MEMBER_ROLE_ID;
-const fighterRole = config.FIGHTERS_ROLE_ID;
-
 const welcome = config.WELCOME_CHANNEL_ID; // #welcome
 
 bot.on('ready', () => {
@@ -108,7 +105,7 @@ bot.on('ready', () => {
                         new RoleMenu(msg);
                     }
                     else if (input.startsWith("purge")) {
-                        new PurgeChannel(msg);
+                        new PurgeChannel(msg, bot);
                     }
                     else if (input.startsWith("profile")) {
                         new Profile(msg);
@@ -126,37 +123,36 @@ bot.on('ready', () => {
             }
     });
 
-    bot.on("guildMemberAdd", member => {
-        const channel = bot.channels.fetch(welcome)
-        var timestamp = msg.member.joinedAt;
+    bot.on('guildMemberAdd', member => {
+        var timestamp = member.joinedAt;
         var u_month = timestamp.getMonth();
         var u_day = timestamp.getDate();
         var u_year = timestamp.getFullYear();
         var joined = u_month + "/" + u_day + "/" + u_year; 
 
-        msg.channel.send(
+        let channel = bot.channels.cache.find(i => i.name === welcome);
+        channel.send(
             {
                 embed: {
                     author: {
-                        name: "A new user has joined the discord server!",
-                        "icon_url": "https://cdn.discordapp.com/attachments/816877389018824704/816878422524559401/orange.png"
+                        name: "Mrowr! I has found a new friend... ",
                     },
                     thumbnail: {
-                        "url": msg.author.avatarURL()
+                        "url": member.user.avatarURL()
                     },
-                    title: "NOTE: This is an 18+ ONLY Server",
-                    Color: Color,
-                    description: "Welcome to Gecko Paradise **" + msg.author.username + "**\nWe hope you enjoy your stay here!\nFeel free to assign roles in <#814179912780087318>",
+                    title: "\u200B",
+                    color: color,
+                    description: "Welcome to the server" + member.displayName + "\nWe hope you enjoy your stay here!\nFeel free to assign roles in <#814179912780087318>",
                     footer: {
-                        text: "Timestamp: " + joined
+                        text: "ID: " + member.id
                     },
 
                 }
 
             });
-
-            msg.member.roles.add(memberRole).catch(console.error);
-            msg.member.roles.add(fighterRole).catch(console.error);
+            
+            let role = member.guild.roles.cache.find(r => r.name === "Member");
+            member.roles.add(role).catch(console.error);
     });
 
     if (process.env.TOKEN != undefined) {
