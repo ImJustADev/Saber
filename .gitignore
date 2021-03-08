@@ -5,4 +5,4 @@ node_modules/
 package-lock.json
 
 # personal json
-config.json.enc
+config.json
