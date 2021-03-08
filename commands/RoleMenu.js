@@ -148,7 +148,7 @@ const gunnerEmote = emote_config.MII_GUNNER_EMOTE;
 class RoleMenu extends Command {
     constructor(msg, client) {
         super(msg);
-        if ((msg.member.roles.cache.has(admin))) {
+        if ((msg.member.hasPermission("ADMINISTRATOR"))) {
             if (msg.channel.id === roles) {
                 msg.delete();
 
