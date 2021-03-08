@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const bot = new Discord.bot();
+const bot = new Discord.Client();
 
 //move options to config file later (2/28/2021) (Blaze)
 var config = require('./config.json');
