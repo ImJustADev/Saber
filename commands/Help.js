@@ -1,13 +1,16 @@
 const Command = require('../api/Command.js');
+const newEmbed = require('../api/EmbedBuilder.js');
 const fs = require('fs');
 
 var config = require('../config.json');
 var msg_config = require('../msg.json');
+const EmbedBuilder = require('../api/EmbedBuilder.js');
 
 // Variables
 const prefix = config.BOT_PREFIX;
 const color = config.EMBED_COLOR;
 const categories = config.HELP_CATEGIRES;
+const fURL = config.FOOTER_ICON_URL;
 
 class Help extends Command {
   constructor(msg) {
@@ -30,6 +33,10 @@ class Help extends Command {
         for (var i = 0; i < obj.length; i++) {
           for (var j = 0; j < obj[i].length; j++) {
             if (obj[i][j].name.toLowerCase() == userInput.toLowerCase()) {
+
+              const helpMenu = new EmbedBuilder(prefix + obj[i][j].name,obj[i][j].help,null,color,null,fURL,msg.author.name,null,"Command List",null,msg.author.avatarURL(),);
+              msg.channel.send(helpMenu);
+              /*
               msg.channel.send({
                 embed: {
                   author: {
@@ -39,7 +46,7 @@ class Help extends Command {
                   color: color,
                   description: obj[i][j].help,
                 }
-              });
+                */
               found = true;
               break;
             }

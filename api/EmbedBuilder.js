@@ -3,7 +3,7 @@ const Message = require('./Message.js');
 const User = require('./User.js');
 
 
-class newEmbed {
+class EmbedBuilder {
 	constructor(
 		title, description, url, color,
 		timestamp, footerIconURL, footerText, thumbnailURL,
@@ -25,5 +25,5 @@ class newEmbed {
 	}
 }
 
-module.exports = newEmbed;
+module.exports = EmbedBuilder;
 
