@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 //move options to config file later (2/28/2021) (Blaze)
-var config = require('./config.json');
 const Logger = require('./utils/Logger.js');
 const Coin = require('./commands/Coin.js');
 const Color = require('./templates/Color.js');
@@ -13,15 +12,18 @@ const Profile = require('./commands/Profile.js');
 const Roles = require('./commands/Roles.js');
 const Help = require('./commands/Help.js');
 
+var config = require('./config.json');
+var npm = require('./package.json');
+
+const build = npm.version;
+
+const prefix = config.BOT_PREFIX;
+const color = config.EMBED_COLOR;
+
 const memberRole = config.MEMBER_ROLE_ID;
 const fighterRole = config.FIGHTERS_ROLE_ID;
 
-const color = 0xFF9900;
-var npm = require('./package.json');
-
 const welcome = config.WELCOME_CHANNEL_ID; // #welcome
-const build = npm.version;
-const prefix = "g!";
 
 bot.on('ready', () => {
 

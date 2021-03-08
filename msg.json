@@ -1,0 +1,4 @@
+{
+    "ERR_PREFIX": ":x: ",
+    "ERR_UNKNOWN_CMD": "Sorry! That is not a valid command. Make sure you typed the command correctly"
+}

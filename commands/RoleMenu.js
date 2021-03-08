@@ -1,15 +1,14 @@
-var config = require('../config.json');
-const Command = require('./Command.js');
-
+const Command = require('../api/Command.js');
 const fs = require('fs');
-const { Channel } = require('discord.js');
 const encoder = 'utf8';
 
-//Category: Embed Colors
-const color = 0xFF9900; //orange (default)
-const e_color = 0xFD0061; //red (error)
+// Configs
+var config = require('../config.json');
+var emote_config = require ('../emote.json');
 
-//Category: Roles
+const color = config.EMBED_COLOR;
+const error_color = config.EMBED_ERROR_COLOR;
+
 var guild_id = config.GUILD_ID; // Guild ID
 var head_gecko = config.SELF_ID; // Myself (Blaze)
 

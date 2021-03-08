@@ -1,5 +1,5 @@
 var config = require('../config.json');
-const Command = require('./Command.js');
+const Command = require('../api/Command.js');
 
 const fs = require('fs');
 const { GuildAuditLogs, Guild } = require('discord.js');

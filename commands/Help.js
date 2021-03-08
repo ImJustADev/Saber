@@ -1,23 +1,25 @@
-const Command = require('./Command.js');
+const Command = require('../api/Command.js');
 const fs = require('fs');
 
-const categories = ["Codes", "Fun", "Technical", "Misc."];
-const other_words = ["Robery", "Kidnap", "Hug", "Fruitcake", "Murder", "Octapus", "Hitman", "Stab", "Love", "Motivation", "AK-47", "Knife"];
-const color = 0xFF9900;
+var config = require('../config.json');
+var msg_config = require('../msg.json');
 
-// g!help <cmd>
+// Variables
+const prefix = config.BOT_PREFIX;
+const color = config.EMBED_COLOR;
+const categories = config.HELP_CATEGIRES;
 
 class Help extends Command {
   constructor(msg) {
     super(msg);
     try {
-      var parsable = msg.content.split(" ")[1]; 
-      if (parsable.startsWith("g!")) { 
-        parsable = parsable.substring(2); 
+      var userInput = msg.content.split(" ")[1]; 
+      if (userInput.startsWith(prefix)) { 
+        userInput = userInput.substring(2); 
       }
       /*
-      if (parsable == "subsection") { // Special case
-        parsable = "subsection";
+      if (userInput == "subsection") { // Special case
+        userInput = "subsection";
       }
       */
 
@@ -27,13 +29,13 @@ class Help extends Command {
         var obj = JSON.parse(data);
         for (var i = 0; i < obj.length; i++) {
           for (var j = 0; j < obj[i].length; j++) {
-            if (obj[i][j].name.toLowerCase() == parsable.toLowerCase()) {
+            if (obj[i][j].name.toLowerCase() == userInput.toLowerCase()) {
               msg.channel.send({
                 embed: {
                   author: {
                     name: "Help"
                   },
-                  title: "**g!" + obj[i][j].name + "**",
+                  title: "**" + prefix + obj[i][j].name + "**",
                   color: color,
                   description: obj[i][j].help,
                 }

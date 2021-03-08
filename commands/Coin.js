@@ -1,4 +1,4 @@
-const Command = require('./Command.js');
+const Command = require('../api/Command.js');
 var config = require('../config.json');
 
 class Coin extends Command {

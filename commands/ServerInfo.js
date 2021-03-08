@@ -1,4 +1,4 @@
-const Command = require('../commands/Command.js');
+const Command = require('../api/Command.js');
 const color = 0xFF9900;
 
 var config = require('../config.json');
