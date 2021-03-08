@@ -34,19 +34,8 @@ class Help extends Command {
           for (var j = 0; j < obj[i].length; j++) {
             if (obj[i][j].name.toLowerCase() == userInput.toLowerCase()) {
 
-              const helpMenu = new EmbedBuilder(prefix + obj[i][j].name,obj[i][j].help,null,color,null,fURL,msg.author.name,null,"Command List",null,msg.author.avatarURL(),);
+              const helpMenu = new EmbedBuilder(prefix + obj[i][j].name,obj[i][j].help,null,color,null,null,msg.author.name,null,"Command List",null,msg.author.avatarURL(),);
               msg.channel.send(helpMenu);
-              /*
-              msg.channel.send({
-                embed: {
-                  author: {
-                    name: "Help"
-                  },
-                  title: "**" + prefix + obj[i][j].name + "**",
-                  color: color,
-                  description: obj[i][j].help,
-                }
-                */
               found = true;
               break;
             }
@@ -72,11 +61,11 @@ class Help extends Command {
         msg.channel.send({
           embed: {
             author: {
-              name: "Help"
+              name: "Showing list of user commands"
             },
             title: "**Command List**",
             color: color,
-            description: "To use this bot type `g![command]`. Commands are *not* case-sensitive. Use `g!help [command]` for more information about a specific command.",
+            description: "To use this bot type `s![command]`. Commands are *not* case-sensitive. Use `s!help [command]` for more information about a specific command.",
             fields: [{
                 name: categories[0],
                 value: message[0]

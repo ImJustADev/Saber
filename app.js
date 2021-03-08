@@ -29,7 +29,7 @@ bot.on('ready', () => {
 
     new Logger('Build ' + build);
     bot.user.setPresence({
-        activity: { name: 'with Tail' }, status: 'online'
+        activity: { name: 'Feline Mrowr' }, status: 'online'
     })
         .then(console.log)
         .catch(console.error);
@@ -37,7 +37,7 @@ bot.on('ready', () => {
     new Logger(" Discord bot Status: SUCCESS..");
     switch (bot.user.username) {
         case "Trecco":
-            new Logger(Color.colorCodes.GREEN + "Logged in as " + Color.colorCodes.WHITE + "Trecco" + Color.colorCodes.RESET);
+            new Logger(Color.colorCodes.GREEN + "Logged in as " + Color.colorCodes.WHITE + "Saber The Cutie" + Color.colorCodes.RESET);
             break;
         default:
             new Logger(Color.colorCodes.GREEN + "Logged in as " + Color.colorCodes.WHITE + bot.user.username);
@@ -60,12 +60,12 @@ bot.on('ready', () => {
                             embed: {
                                 author: {
                                     name: "GitHub",
-                                    icon_url: "https://raw.githubusercontent.com/ImJustADev/TreccoDev/main/misc/github-favicon.png",
+                                    icon_url: "https://raw.githubusercontent.com/ImJustADev/Saber/main/misc/github-favicon.png",
                                 },
-                                title: "Trecco The Gecko",
-                                url: "https://github.com/imjustadev/TreccoDev/",
+                                title: "Saber",
+                                url: "https://github.com/imjustadev/Saber/",
                                 color: color,
-                                description: "Bot Version: **" + build + "**\n\nView the original project source code here\nfor Trecco The Gecko Discord Bot\n\nAuthor: BlazeTheSnep\nDiscord: Blaze#0069\nTwitter: @BlazeTheSnep",
+                                description: "Bot Version: **" + build + "**\n\nView the original project source code here\nfor SaberBot\n\nAuthor: BlazeTheSnep\nDiscord: Blaze#0069\nTwitter: @BlazeTheSnep",
                             }
                         });
                     }
@@ -119,7 +119,7 @@ bot.on('ready', () => {
                     color: color,
                     description: "Welcome to Gecko Paradise **" + msg.author.username + "**\nWe hope you enjoy your stay here!\nFeel free to assign roles in <#814179912780087318>",
                     footer: {
-                        text: "Timestamp: " + joined,
+                        text: "Timestamp: " + joined
                     },
 
                 }
