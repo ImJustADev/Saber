@@ -12,7 +12,7 @@ const g_color = 15823988; //green (success)
 //Category: Ranges
 const min = config.CMD_PURGE_MINIMUM; // min
 const max = config.CMD_PURGE_MAXIMUM; // max
-const report = config.PURGE_LOG_CHANNEL;
+const report = config.DEV_CHANNEL;
 var npm = require('../package.json');
 
 const npm_ver = npm.version;
@@ -39,7 +39,6 @@ var k = 1; // 1
 var l = 0; // 0
 var m = 0; // 0
 var lines = min;
-var client;
 
 const other_words = ["Robery", "Kidnap", "Hug", "Fruitcake", "Murder", "Octapus", "Hitman", "Stab", "Love", "Motivation", "AK-47", "Knife"];
 
@@ -48,8 +47,11 @@ class PurgeChannel extends Command {
         super(msg);
         
         const reportTo = client.channels.cache.find(i => i.name === report);
-        var executor = msg.member.user.tag;
-        var e_id = msg.author.id; 
+        //const gName = guild;
+        //const gID = guild.id;
+        const executor = msg.member.user.tag;
+        const e_id = msg.author.id;
+
         if ((msg.member.hasPermission("ADMINISTRATOR"))) {
                 try {
 

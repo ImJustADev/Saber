@@ -13,9 +13,9 @@ class CreateUser extends Command {
 
         }, function (error, response) {
             if (error) {
-                new Logger(RED + "Failed to add user " + msg.author.id + " to the database!" + RESET);
+                new Logger("Failed to add user " + msg.author.id + " to the database!");
             } else {
-                new Logger(GREEN + "User " + msg.author.id + " was added to the database successfully!" + RESET);
+                new Logger("User " + msg.author.id + " was added to the database successfully!");
             }
         });
     }

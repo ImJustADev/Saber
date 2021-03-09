@@ -1,15 +1,13 @@
 const Command = require('../api/Command.js');
 const color = 0xFF9900;
 
-var config = require('../config.json');
-
 class ServerInfo extends Command {
   constructor(msg) {
     super(msg);
     // Roles and IDs
     // Channels
     try {
-      var mGuild = config.GUILD_ID;
+      var mGuild = msg.guild;
       if (mGuild.available) {
         var bots = 0;
         var plural = " bot)";
