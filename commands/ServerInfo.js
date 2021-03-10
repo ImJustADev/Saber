@@ -8,17 +8,7 @@ class ServerInfo extends Command {
     // Channels
     try {
       var mGuild = msg.guild;
-      if (mGuild.available) {
-        var bots = 0;
-        var plural = " bot)";
-        for (var i = 0; i < mGuild.members.array().length; i++) {
-          if (mGuild.members.array()[i].user.bot) {
-            bots++;
-            if (bots > 1) {
-              plural = " bots)";
-            }
-          }
-        }
+      if (mGuild.available == true) {
         msg.channel.send({
           embed: {
             title: mGuild.name,
@@ -61,6 +51,7 @@ class ServerInfo extends Command {
         });
       }
     } catch (e) {
+      console.log(e);
       msg.channel.send({
         embed: {
           description: "Cannot Get Server Info",

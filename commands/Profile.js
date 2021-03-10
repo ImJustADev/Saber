@@ -3,6 +3,7 @@ var config = require('../config.json');
 
 const color = 10197915;
 const orange = 0xFF9900;
+const prefix = config.BOT_PREFIX;
 
 var logo = "https://cdn.discordapp.com/attachments/816877389018824704/816878422524559401/orange.png";
 var months_arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
@@ -29,7 +30,7 @@ class Profile extends Command {
           "url": msg.author.avatarURL()
         },
         author: {
-          name: "g!help profile",
+          name: prefix + "!help profile",
           "icon_url": logo,
         },
 
@@ -47,7 +48,7 @@ class Profile extends Command {
                  "`\nRank:   `" + msg.member.roles.highest.name +
                  "`\nStatus: `" + msg.member.user.presence.status +
                  "`\n",
-          inline: true
+          inline: false
         },
       ],
       footer: {

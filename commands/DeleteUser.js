@@ -1,8 +1,8 @@
-const Command = require('../commands/Command.js');
+const Command = require('../api/Command.js');
 const Logger = require('../utils/Logger.js');
 
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://localhost:27017';
+const url = 'cluster0.1c5vw.mongodb.net';
 
 class DeleteUser extends Command {
     constructor(msg) {

@@ -3,10 +3,6 @@
     "version": "1.0.0",
     "description": "A Custom Discord Bot for All your Needs",
     "main": "app.js",
-    "scripts": {
-        "test": "mongod --dbpath ./mongoDB & node app.js",
-        "start": "node app.js & mongo --host 127.0.0.1:27017"
-    },
     "repository": {
         "type": "git",
         "url": "git://github.com/imjustadev/Saber.git"
@@ -15,11 +11,10 @@
     "license": "UNLICENSED",
     "homepage": "https://github.com/imjustADev/Saber#readme",
     "dependencies": {
-        "dblapi.js": "^2.4.1",
         "discord.js": "^12.5.1",
         "dotenv": "^8.2.0",
         "enc": "^0.4.0",
-        "mongodb": "^3.6.4",
+        "mongodb": "6.14.11",
         "request": "^2.88.2"
     }
 }

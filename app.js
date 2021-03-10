@@ -10,12 +10,11 @@ const PurgeChannel = require('./commands/PurgeChannel.js');
 const Profile = require('./commands/Profile.js');
 const Roles = require('./commands/Roles.js');
 const Help = require('./commands/Help.js');
-
 var config = require('./config.json');
 var npm = require('./package.json');
-const PostToDB = require('./databases/PostToDB.js');
-const UpdateGuilds = require('./api/UpdateGuilds.js');
-const DeleteUser = require('./commands/DeleteUser.js');
+const mongo = require('./data/mongo.js')
+const guildSchema = require('./Schemas/guildSchema.js');
+const userSchema = require('./Schemas/userSchema.js');
 
 const build = npm.version;
 const author = npm.author;
@@ -24,6 +23,8 @@ const depends = npm.dependencies;
 const homepage = npm.homepage;
 
 const prefix = config.BOT_PREFIX;
+const db_prefix = config.DB_PREFIX;
+const mongoPath = config.MONGO_DB;
 
 const indents = config.CONSOLE_NL_SIZE;
 const header = config.CONSOLE_HEADER;
@@ -40,7 +41,6 @@ const c5 = Color.colorCodes.RED;
 const welcome = config.WELCOME_CHANNEL_ID; // #welcome
 
 client.on('ready', () => {
-
     console.log("\n".repeat(indents) + c2 + h_symbol.repeat(h_num) + header + h_symbol.repeat(h_num) + c2);
     console.log("About: " + c3 + about + c2);
     console.log("Depends: " + c3 + JSON.stringify(depends, null, 0) + c2);
@@ -61,10 +61,9 @@ client.on('ready', () => {
         )
         .catch(console.error);
 
-    new Logger("Start-up process finished with 0 error(s)");
     switch (client.user.username) {
         case "Saber":
-            new Logger("Logged in as " + c2 + "Saber The Tiger");
+            new Logger("Logged in as " + c5 + "Saber The Tiger");
             break;
         default:
             new Logger("Logged in as " + c2 + client.user.username);
@@ -78,12 +77,8 @@ client.on('ready', () => {
 
     if (client.user.id == config.CLIENT_ID) {
         new Logger("This instance is a live bot");
-        new UpdateGuilds(client.guilds.size);
-        new PostToDB(client);
-        const DBL = require("dblapi.js");
-        const dbl = new DBL(config.DBL_TOKEN, client);
 
-
+        /*
         const redirect = client.channels.cache.find(i => i.name === config.DEV_CHANNEL);
         redirect.send({
             embed: {
@@ -95,26 +90,26 @@ client.on('ready', () => {
                     inline: true
                 }, {
                     name: "Guilds Serving",
-                    value: client.guilds.size,
+                    value: client.guilds.cache.size,
                     inline: true
                 }
                 ],
                 footer: {
-                    text: "This message was automatically generated because an instance of SaberBpt was started. This message is intended for development and debugging purposes and should only appear in a specific server."
+                    text: "This message was automatically generated because an instance of SaberBot was started. This message is intended for development and debugging purposes and should only appear in a specific server."
                 }
             }
         });
-    } else if (process.env.USER == "BlazeTheSnep") {
+        */
+    } else if (process.env.USER == "Saber") {
         console.log("Compilation successful! Exiting with code 0.");
         process.exit(0);
     }
-
     //new PostToDB(client);
 
 
 });
 
-client.on('message', msg => {
+client.on('message', async msg => {
 
     if (msg.content)
 
@@ -161,65 +156,109 @@ client.on('message', msg => {
                     new ServerInfo(msg);
                 }
                 else if (input == "guilds") {
-                    msg.channel.send("I am current serving `" + client.guilds.size + "` guilds.");
-                    new UpdateGuilds(client.guilds.size);
+                    msg.channel.send("I am current serving `" + client.guilds.cache.size + "` guilds.");
+                    //new UpdateGuilds(client.guilds.size);
                 }
-                else if (input == "clear") {
-                    new DeleteUser(msg);
-                }
+                else if (input.startsWith("newuser")) {
+                    msg.delete();
+                    await mongo().then(async (mongoose) => {
+                        try {
+                            new Logger(db_prefix + c2 + "Atempting to create a new User Profile for User " + msg.author.username + "...");
+                            await new userSchema({
+                                "_id": msg.member.id,
+                                "discord": msg.member.displayName,
+                                "userID": msg.member.id,
+                                "userTag": msg.member.user.tag,
+                                "xp": 0,
+                                "level": 1,
+                                "rank": 0,
+                                "preferences": [],
+                                "nickname": null,
+                                "switchFriends": [],
+                                "switchCode": null,
+                                "switchPrivacy": "PUBLIC",
+                                "twitter": null,
+                                "youtube": null,
+                                "spotify": null,
+                                "steam": null,
+                                "twitch": null,
+                                "telegram": null,
+                                "hasSubscription": false,
+                                "hasSmash": false,
+                                "playtime": 0,
+                                "wins": 0,
+                                "losses": 0,
+                                "kills": 0,
+                                "deaths": 0,
+                                "kdr": 0,
+                                "mains": [],
+                                "stages": [],
+                                "counter_picks": [],
+                                "rule_set": [],
+                                "p_chars": [],
+                                "p_stages": [],
+                                "p_region": [],
+                                "p_prefs": []
+                            }).save();
+                        } finally {
+                            if (!input[1]) {
+                                msg.channel.send(":white_check_mark:  Hey <@" + msg.member.id + ">! Your Profile Account Setup for was successful! Type " + prefix + "profile to view your profile");
+                            }
+                            else {
+                                msg.channel.send(":white_check_mark:  Profile Account Setup for <@" + msg.member.id + "> was successful! Type " + prefix + "profile " + msg.member.displayName + " to view their profile");
 
+                            }
+                        }
+                        new Logger(db_prefix + c2 + "Successfully created new user Index with id: " + msg.author.id);
+                        mongoose.connection.close()
+
+                    })
+                }
             }
         } catch (e) {
             console.log(e);
         }
 });
 
-client.on('guildCreate', guild => {
-    new Logger("Guild Create was triggered");
-    try {
-        if (client.user.id == config.CLIENT_ID && guild.available) {
-            var id = guild.id;
-            try {
-                const DBL = require("dblapi.js");
-                const dbl = new DBL(config.DBL_TOKEN, client);
-                new UpdateGuilds(client.guilds.size);
-                new PostToDB(client);
-            } catch (e) {
-                console.log(e);
-            } finally {
-
-                /*
-                const MongoClient = require('mongodb').MongoClient;
-                const url = 'mongodb://localhost:27017';
-                MongoClient.connect(url, function (err, client) {
-                    var db = client.db('SaberBot');
-                    db.collection('guilds').insertOne({
-                        _id: id,
-                        announcement_channel: null,
-                        prefix: "s!"
-                    }, function (err, res) {
-                        if (err) {
-                            console.log(err);
-                            client.close();
-                        } else {
-                            console.log(res);
-                            client.close();
-                        }
-                    });
-                })
-                */
-            }
+client.on('guildCreate', async guild => {
+    await mongo().then(async (mongoose) => {
+        try {
+            new Logger(db_prefix + c2 + "A new guild was created! Attempting to put data into MongoDB...");
+            await new guildSchema({
+                "_id": guild.id,
+                "guildID": guild.id,
+                "name": guild.name,
+                "owner": guild.ownerID,
+            }).save();
+            new Logger(db_prefix + c2 + "Guild: " + guild.name);
+            new Logger(db_prefix + c2 + "Guild ID: " + guild.id);
+            new Logger(db_prefix + c2 + "Owner: " + guild.ownerID);
+        } finally {
+            new Logger(db_prefix + c2 + "Successfully created new index for guild with id: " + guild.id);
+            mongoose.connection.close()
         }
-    } catch (e) {
-        console.log(e);
-    }
+    })
 });
 
-client.on('guildDelete', guild => {
-    new Logger("Guild Delete Triggered");
-    new UpdateGuilds(client.guilds.size);
-    const DBL = require("dblapi.js");
-    const dbl = new DBL(config.DBL_TOKEN, client);
+client.on('guildDelete', async guild => {
+    await mongo().then(async (mongoose) => {
+        try {
+            new Logger(c5 + db_prefix + c2 + "SaberBot was removed from a guild... Removing from MongoDB:");
+            new Logger(c5 + db_prefix + c2 + "Guild: " + guild.name);
+            new Logger(c5 + db_prefix + c2 + "Guild ID: " + guild.id);
+            new Logger(c5 + db_prefix + c2 + "Owner: " + guild.ownerID);
+
+            await new guildSchema({
+                "_id": guild.id,
+                "guildID": guild.id,
+                "name": guild.name,
+                "owner": guild.ownerID,
+            }).deleteOne();
+        } finally {
+            new Logger(c5 + db_prefix + c2 + "Successfully removed entry with index " + guild.id);
+            mongoose.connection.close()
+        }
+    })
 });
 
 client.on('guildMemberAdd', member => {
